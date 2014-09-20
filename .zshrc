@@ -8,6 +8,7 @@ export OUTPUT_CHARSET=utf-8
 #----------------------------------------------------------
 # パス
 #----------------------------------------------------------
+export PATH=/usr/local/bin:$PATH
 # mecab
 export PATH=$PATH:/usr/local/mecab/bin
 
@@ -17,7 +18,14 @@ export PATH=$PATH:/usr/local/mecab/bin
 # 補完される前にオリジナルのコマンドまで展開してチェックする
 setopt complete_aliases
 
-alias ls='ls -hF --color'
+case "${OSTYPE}" in
+darwin*)
+  alias ls="ls -GhF"
+  ;;
+linux*)
+  alias ls='ls -hF --color'
+  ;;
+esac
 alias ll='ls -l'
 alias la='ls -A'
 alias lla='ls -lA'
@@ -146,7 +154,7 @@ RPROMPT="%T"
 setopt transient_rprompt
 # プロンプト
 function precmd() {
-PROMPT="%{${fg[green]}%}%n%{${fg[yellow]}%} %~%{${reset_color}%}"
+PROMPT="%{${fg[green]}%}%n@%M%{${fg[yellow]}%} %~%{${reset_color}%}"
 st=`git status 2>/dev/null`
 if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
 	color=${fg[cyan]}
@@ -170,8 +178,9 @@ PROMPT+=" %{$color%}$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 
 # virtualenvwrapperの設定
 #----------------------------------------------------------
 export WORKON_HOME=$HOME/.virtualenvs
-source `which virtualenvwrapper.sh`
-
+if [[ -e `which virtualenvwrapper.sh` ]]; then
+    source `which virtualenvwrapper.sh`
+fi
 
 #----------------------------------------------------------
 # その他
