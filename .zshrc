@@ -172,8 +172,12 @@ PROMPT+=" %{$color%}$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 
 #----------------------------------------------------------
 # Python
 #----------------------------------------------------------
-
-
+# pyenv
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+fi
 #----------------------------------------------------------
 # virtualenvwrapperの設定
 #----------------------------------------------------------
