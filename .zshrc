@@ -34,7 +34,6 @@ alias pu='pushd'
 alias po='popd'
 alias grep='grep -n --color'
 alias e='emacs'
-alias ipython='/usr/bin/ipython'
 #alias screen='screen -U'
 
 #----------------------------------------------------------
