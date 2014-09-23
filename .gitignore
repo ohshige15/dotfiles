@@ -21,3 +21,8 @@ Temporary Items
 
 # backup file
 *~
+\#*\#
+
+# python
+*.pyc
+
