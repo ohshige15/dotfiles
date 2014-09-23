@@ -9,8 +9,6 @@ export OUTPUT_CHARSET=utf-8
 # パス
 #----------------------------------------------------------
 export PATH=/usr/local/bin:$PATH
-# mecab
-export PATH=$PATH:/usr/local/mecab/bin
 
 #----------------------------------------------------------
 # エイリアス
