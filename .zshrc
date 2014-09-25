@@ -175,13 +175,6 @@ if [ -d "${PYENV_ROOT}" ]; then
     export PATH=${PYENV_ROOT}/bin:$PATH
     eval "$(pyenv init -)"
 fi
-#----------------------------------------------------------
-# virtualenvwrapperの設定
-#----------------------------------------------------------
-export WORKON_HOME=$HOME/.virtualenvs
-if [[ -e `which virtualenvwrapper.sh` ]]; then
-    source `which virtualenvwrapper.sh`
-fi
 
 #----------------------------------------------------------
 # その他
