@@ -13,26 +13,7 @@ export PATH=/usr/local/bin:$PATH
 #----------------------------------------------------------
 # エイリアス
 #----------------------------------------------------------
-# 補完される前にオリジナルのコマンドまで展開してチェックする
-setopt complete_aliases
-
-case "${OSTYPE}" in
-darwin*)
-  alias ls="ls -GhF"
-  ;;
-linux*)
-  alias ls='ls -hF --color'
-  ;;
-esac
-alias ll='ls -l'
-alias la='ls -A'
-alias lla='ls -lA'
-alias lal='ls -lA'
-alias pu='pushd'
-alias po='popd'
-alias grep='grep -n --color'
-alias e='emacs'
-#alias screen='screen -U'
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 #----------------------------------------------------------
 # 基本
