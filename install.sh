@@ -8,8 +8,8 @@ echo '.gitignore'
 ln -sf ~/dotfiles/.gitignore ~/.gitignore
 echo '.zshrc'
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
-echo '.zshrc.local'
-ln -sf ~/dotfiles/.zshrc.local ~/.zshrc.local
+echo '.zshrc.alias'
+ln -sf ~/dotfiles/.zshrc.alias ~/.zshrc.alias
 echo '.vimrc'
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 
