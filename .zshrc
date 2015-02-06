@@ -178,7 +178,6 @@ function make() {
 #----------------------------------------------------------
 # 環境依存対応
 #----------------------------------------------------------
-# .zshrc.mineがあれば読み込む
-#[ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
-#eval "$(rbenv init -)"
+# .zshrc.localがあれば読み込む
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
